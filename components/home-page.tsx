@@ -190,7 +190,7 @@ export function HomePage() {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-gray-100 dark:to-gray-950 rounded-lg overflow-hidden">
-                <img
+                <Image
                   alt="Rubik's Cube"
                   className="w-full h-full object-cover animate-spin-slow"
                   height={600}
@@ -215,14 +215,14 @@ export function HomePage() {
                 My Recent Work
               </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Take a look at some of my recent projects and see how I've
-                brought my clients' ideas to life.
+                Take a look at some of my recent projects and see how I&apos;ve
+                brought my clients&apos; ideas to life.
               </p>
             </div>
           </div>
           <div className="grid gap-6 mt-8 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
-              <div className="bg-white dark:bg-gray-950 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
+              <div key={project.Name}  className="bg-white dark:bg-gray-950 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
                 <Skeleton
                   isLoaded={isLoaded}
                   className="aspect-video bg-gray-200 dark:bg-gray-800 rounded-t-lg"
@@ -332,7 +332,7 @@ export function HomePage() {
             </div>
             <div className="justify-center w-full flex [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] p-4 gap-6 overflow-x-auto  ">
               {clients.map((client) => (
-                <div className="bg-white dark:bg-gray-950 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                <div key={client.Name} className="bg-white dark:bg-gray-950 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
                   <Skeleton
                     isLoaded={isClientLoaded}
                     className="flex items-center justify-center p-2"
@@ -358,7 +358,7 @@ export function HomePage() {
   );
 }
 
-function FigmaIcon(props) {
+function FigmaIcon(props: any) {
   return (
     <svg
       {...props}
@@ -381,7 +381,7 @@ function FigmaIcon(props) {
   );
 }
 
-function PaletteIcon(props) {
+function PaletteIcon(props: any) {
   return (
     <svg
       {...props}
